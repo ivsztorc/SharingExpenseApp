@@ -14,5 +14,10 @@
  *= require_self
  */
 body {
-  background: #333 url("https://d1a3f4spazzrp4.cloudfront.net/web-fresh/about-heros/about-hero-1-1440-900.jpg") no-repeat;
+  background: url("/images/backgroundimg.png") no-repeat;
+  background-size: cover; 
 }
+
+/*#8B911A
+#C8CD3B
+#95A131*/
