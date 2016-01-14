@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  amount: 1
+  usertrip_id: 1
+  created_at: 
+
+two:
+  description: MyText
+  amount: 1
+  usertrip_id: 1
+  created_at: 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ExpenseShare</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>hiiiiya</h1>
+
+ <div class="fixed-header">
+    <header class="header flex">  
+
+ <% if user_signed_in? %>
+
+     <div class="account">
+       <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
+     </p>
+     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
+     <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
+     <% else %>
+     <div class="register">
+       <%= link_to "Sign up", new_user_registration_path, :class => 'signup btn'  %> |
+       <%= link_to "Login", new_user_session_path, :class => 'login btn'  %>
+
+     </div>
+     <% end %> 
+   </header>
+ </div>
+
+
+
+<%= yield %>
+
+</body>
+</html>
