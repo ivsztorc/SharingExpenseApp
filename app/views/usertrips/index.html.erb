@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Trips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Trip</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usertrips.each do |usertrip| %>
+      <tr>
+        <td><%= usertrip.user_id %></td>
+        <td><%= usertrip.trip_id %></td>
+        <td><%= link_to 'Show', usertrip %></td>
+        <td><%= link_to 'Edit', edit_usertrip_path(user_trip) %></td>
+        <td><%= link_to 'Destroy', usertrip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User trip', new_usertrip_path %>
+

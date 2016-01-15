@@ -5,13 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
 </head>
 <body>
-<h1>hiiiiya</h1>
 
  <div class="fixed-header">
     <header class="header flex">  
-    
+   
  
  <% if user_signed_in? %>
 
@@ -29,10 +30,61 @@
      <% end %> 
    </header>
  </div>
+<br>
+<br>
+<br>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> 
+
+<section>
+<div class="block">
 
 
+<br>
+<br>
+<br>
+<br>
+</div>
+</section>
 
 <%= yield %>
 
-</body>
-</html>
+</header>
+
+<script type="text/javascript">
+      // Taken from http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/
+      jQuery("document").ready(function($){
+        var nav_container = $("#fixed_header");
+        if(nav_container.offset()) {
+          var offset = nav_container.offset().top;
+        }
+
+        console.log(offset);
+
+        $(window).scroll(function () {
+          if( $(this).scrollTop() > offset) {
+            nav_container.addClass("f-nav");
+          } else {
+            nav_container.removeClass("f-nav");
+          }
+        });
+      });
+
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+  </html>

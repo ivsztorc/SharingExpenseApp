@@ -6,11 +6,19 @@ class User < ActiveRecord::Base
   has_many :trips
   has_many :expenses
   # has_many :feedbacks, :through => :passenger
-  has_many :given_feedback, class_name: 'Feedback'
 
   before_create :set_default_role
 
 
+  def human_readable_date
+    journey_date.strftime('%A %B %d %Y')
+  end
+
+  def human_readable_time
+    starting_time.strftime('%A %B %d %Y, %H:%M')
+  end
+
+  
   def role?(role_to_compare_to)
     role_to_compare_to.to_s == self.role.to_s
   end
@@ -19,6 +27,7 @@ end
 def set_default_role
   self.role = "user" unless role
 end 
+
 
 
 def role?(role_to_compare)

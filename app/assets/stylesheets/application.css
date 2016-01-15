@@ -16,8 +16,143 @@
 body {
   background: url("/images/backgroundimg.png") no-repeat;
   background-size: cover; 
+    margin: 0;
+    color: black;
+    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+  }
+
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  max-width: 110%;
+  padding: 15px 0;
+  margin: 0px auto;
+  background: rgba(10,10,10,.8);
+  position: static;
+}
+.btn {
+  text-align: center;
+  border-radius: 3px;
+  padding: 8px;
 }
 
-/*#8B911A
-#C8CD3B
-#95A131*/
+.signup {
+  display: inline-block;
+  text-align: centre;
+  border: 1px solid;
+  border-color: #ff3660;
+}
+.register {
+  margin-right: 20px;
+}
+
+.login {
+  display: inline-block;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #ff3660;
+  padding: 8px;
+}
+
+.account {
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 15px;
+}
+.account img { 
+  border-radius: 20px;
+  max-width: 40px;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+
+}
+.account p {
+  font-size: .8em;
+}
+.account a {
+  font-weight: 100;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-page {
+  margin-top: 100px;
+  color: #94B053;
+  text-align: center;
+}
+.home-page h1 {
+  font-weight: 200;
+  font-size: 2.8em;
+  line-height: 1.8em;
+  max-width: 38em;
+  margin: auto;
+  color: black;
+}
+.home-page h2 {
+  font-weight: 300;
+  font-size: 2.2em;
+  line-height: 1.8em;
+  font-style: italic;
+}
+
+/*STATIC HEADER*/
+.header.header.flex {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 9999;
+    margin-bottom: 90px;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+/*END OF STATIC HEADER*/
+
+/*EDIT PROFILE*/
+.edit_profile {
+  max-width: 30%;
+  color: white;
+  margin: 100px auto;
+  padding: 40px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  background: rgba(10,10,10,.8);
+  padding-bottom: 80px;
+  text-align: center;
+}
+.edit_profile btn {
+
+}
+.edit_profile .field:hover {
+  color: #BDEB07;
+}
+.edit_profile h1 {
+  color: white;
+}
+/*END OF EDIT PROFILE*/
+
+a {
+  color: #BDEB07;
+  text-decoration: none;
+}
+.block {
+  background: white;
+  height: 350px;
+  margin-top: 0px;b
+}
+
+.icon {
+  width: 60px;
+  height: 40px;
+}
