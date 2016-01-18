@@ -9,9 +9,10 @@ gem 'compass', '~> 1.0', '>= 1.0.3'
 gem 'will_paginate'
 gem 'jquery-turbolinks'
 gem 'rails4-autocomplete'
-gem "jquery-ui-rails"
-gem "country_select"
-
+gem 'jquery-ui-rails'
+gem 'country_select'
+gem 'currencies'
+gem 'countries', '~> 1.2', '>= 1.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

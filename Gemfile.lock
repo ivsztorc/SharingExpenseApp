@@ -208,7 +208,9 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   compass (~> 1.0, >= 1.0.3)
+  countries (~> 1.2, >= 1.2.2)
   country_select
+  currencies
   devise
   jbuilder (~> 2.0)
   jquery-rails

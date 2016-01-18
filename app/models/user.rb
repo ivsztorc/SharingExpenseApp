@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :expenses, :through => :trips
+  has_many :trips, :through => :usertrip
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
   has_many :trips

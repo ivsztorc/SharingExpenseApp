@@ -2,17 +2,17 @@
 
 <p>
   <strong>Name:</strong>
-  <%= Trip.name %>
+  <%= @trip.name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= Trip.name.country %>
+  <%= @trip.country %>
 </p>
 
 <p>
   <strong>Currency:</strong>
-  <%= Trip.name.currency %>
+  <%= @trip.currency %>
 </p>
 
 <%= link_to 'Edit', edit_trip_path(@trip) %> |

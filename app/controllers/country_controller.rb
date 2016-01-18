@@ -2,9 +2,7 @@ class CountryController < ApplicationController
 
 
   def index
-    @country = Country.all
+   
   end
+end
 
-  def new
-    @country = Country.new
-  end
