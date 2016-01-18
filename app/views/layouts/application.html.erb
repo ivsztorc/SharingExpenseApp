@@ -40,9 +40,10 @@
 <section>
 <div class="block">
 <div class="icon-flex">
-<%= image_tag("luggage2.png", :alt => "luggage_icon", :class=> "icon") %>
+<%= link_to raw(image_tag("luggage2.png", :alt => "luggage_icon", :class=> "icon")), new_trip_path %>
 <br>
-<%= image_tag("scale2.png", :alt => "luggage_icon", :class=> "icon") %>
+<%= link_to raw(image_tag("scale2.png", :alt => "luggage_icon", :class=> "icon")), new_expense_path %>
+
 <br>
 <%= image_tag("secure.png", :alt => "luggage_icon", :class=> "icon") %>
 </div>

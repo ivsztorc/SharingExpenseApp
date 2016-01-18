@@ -23,9 +23,9 @@
     <%= f.label :amount %><br>
     <%= f.text_field :amount %>
   </div>
-  <div class="field">
-    <%= f.label :usertrip_id %><br>
-    <%= f.text_field :usertrip_id %>
+  <div class= "field">
+  <%= f.label :expense_image%><br />
+  <%= f.file_field :expense_image %>
   </div>
   <div class="field">
     <%= f.label :created_at %><br>
@@ -35,3 +35,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Create new expense', new_expense_path %>

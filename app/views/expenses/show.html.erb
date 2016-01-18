@@ -24,6 +24,9 @@
   <strong>Created at:</strong>
   <%= @expense.created_at %>
 </p>
+<%= link_to image_tag(@expense.expense_image.thumb.url), @expense.expense_image.midium.url %>
+
+
 
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Back', expenses_path %>

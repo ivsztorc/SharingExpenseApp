@@ -34,8 +34,9 @@ class TripsController < ApplicationController
   end
 
   def update
+    @trip = Trip.find(params[:id])
     respond_to do |format|
-      if @trip.update(trip_params [:id])
+      if @trip.update(trip_params)
         format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
         format.json { render :show, status: :ok, location: @trip }
       else
@@ -46,7 +47,7 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    @trip.destroy(trip_params[:id])
+    @trip.destroy
     respond_to do |format|
       format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
       format.json { head :no_content }
@@ -61,6 +62,6 @@ class TripsController < ApplicationController
       end
       
       def trip_params
-        params.require(:trip).permit(:id, :name, :country, :currency)
+        params.require(:trip).permit( :name, :country, :currency)
       end
 end

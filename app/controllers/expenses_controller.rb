@@ -7,6 +7,7 @@ class ExpensesController < ApplicationController
 
 
   def show
+  @expense = Expense.find(params[:id])
   end
 
 
@@ -16,6 +17,7 @@ class ExpensesController < ApplicationController
 
 
   def edit
+  @expense = Expense.find(params[:id])
   end
 
   def create
@@ -33,6 +35,7 @@ class ExpensesController < ApplicationController
   end
 
   def update
+    @expense = Expense.find(params[:id])
     respond_to do |format|
       if @expense.update(expense_params)
         format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
@@ -58,6 +61,6 @@ class ExpensesController < ApplicationController
     end
 
     def expense_params
-      params.require(:expense).permit(:name, :description, :amount, :usertrip_id, :created_at)
+      params.require(:expense).permit(:name, :description, :amount, :usertrip_id, :created_at, :expense_image)
     end
 end
