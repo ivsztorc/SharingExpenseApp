@@ -14,3 +14,4 @@ Usertrip.delete_all
 u1 = User.create!( name: "admin", email:"admin@expenseshare.com", password: "password", role: "admin")
 u2 = User.create!( name: "Ewan", email: "user@expenseshare.com", password: "password", role: "user")
 u3 = User.create!( name: "Boby", email: "boby@expenseshare.com", password: "password", role: "user")
+t1 = Trip.create!( name: "Zakopane", country: "Poland", currency: "Zlotych")
