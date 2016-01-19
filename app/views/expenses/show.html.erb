@@ -16,15 +16,15 @@
 </p>
 
 <p>
-  <strong>Usertrip:</strong>
-  <%= @expense.usertrip_id %>
+  <strong>Image:</strong>
+  <%#= image_tag @expense.expense_image.url %>
+  <%= link_to image_tag(@expense.expense_image.thumb.url), @expense.expense_image.medium.url %>
 </p>
 
 <p>
   <strong>Created at:</strong>
   <%= @expense.created_at %>
 </p>
-<%= link_to image_tag(@expense.expense_image.thumb.url), @expense.expense_image.midium.url %>
 
 
 

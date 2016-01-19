@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
   # has_many :feedbacks, :through => :passenger
 
   before_create :set_default_role
-
-
+  
   def human_readable_date
     journey_date.strftime('%A %B %d %Y')
   end

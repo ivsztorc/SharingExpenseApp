@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Amount</th>
-      <th>Usertrip</th>
+      <th>Image</th>
       <th>Created at</th>
       <th colspan="3"></th>
     </tr>
@@ -16,16 +16,19 @@
 
   <tbody>
     <% @expenses.each do |expense| %>
-
+    <!-- <td><%= link_to image_tag(expense.expense_image.thumb.url), expense.expense_image.medium.url %></td> -->
+    <td><%= image_tag expense.expense_image.url %></td>
       <tr>
         <td><%= expense.name %></td>
         <td><%= expense.description %></td>
         <td><%= expense.amount %></td>
-        <td><%= expense.created_at %></td>
+        <td><%= expense.expense_image %></td>
+        <td><%= expense.human_readable_date %></td>
         <td><%= link_to 'Show', expense %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
         <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      
     <% end %>
   </tbody>
 </table>

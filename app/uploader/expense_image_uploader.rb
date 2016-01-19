@@ -10,7 +10,7 @@ class ExpenseImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [100, 100]
   end
 
-  version :midium do 
+  version :medium do 
     process :resize_to_fit => [400, 400]
   end
 
