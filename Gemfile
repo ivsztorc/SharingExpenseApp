@@ -13,6 +13,7 @@ gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 gem 'country_select'
 gem 'currencies'
+gem 'currency_select', '~> 0.1.5'
 gem 'countries', '~> 1.2', '>= 1.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

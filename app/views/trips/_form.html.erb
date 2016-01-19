@@ -16,15 +16,20 @@
   <%= f.text_field :name %>
 </div>
 
-<div class="field">
-  <%= f.label :currency %><br>
-  <%= f.text_field :currency %>
+<div class="currency">
+  <%= f.label :currency %>
+  <%= f.collection_select :currency, Currency.all.order(:name),:id,:name %>
 </div>
 
 <div class="country">
   <%= f.label :country %>
   <%= f.collection_select :country, Country.all.order(:name),:id,:name %>
 </div>
+  
+
+
+
+
   <div class="actions">
     <%= f.submit "Create" %>
   </div>
