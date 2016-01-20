@@ -40,9 +40,6 @@ currency_symbols = [
     "Ukrainian Hryvnia",
     "Vietnamese Dong"
 ]
-
-
-
 currency_list.each do |currency|
   Currency.create(name: currency)
 end

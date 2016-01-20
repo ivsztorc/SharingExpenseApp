@@ -6,112 +6,30 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
 </head>
 <body>
-
- <div class="fixed-header">
-    <header class="header flex">  
-   
- 
- <% if user_signed_in? %>
-
-     <div class="account">
-       <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
-     </p>
-     <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
-     <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
-     <% else %>
-     <div class="register">
-       <%= link_to "Sign up", new_user_registration_path, :class => 'signup btn'  %> |
-       <%= link_to "Login", new_user_session_path, :class => 'login btn'  %>
-
-     </div>
-     <% end %> 
-   </header>
- </div>
-<br>
-<br>
-<br>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> 
-
+  <header class="header flex">  
+    <% if user_signed_in? %>
+    <div class="account">
+     <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
+   </div>
+   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
+   <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
+   <% end %> 
+ </header>
 <section>
-<div class="block">
-<div class="icon-flex">
-<%= link_to raw(image_tag("luggage2.png", :alt => "luggage_icon", :class=> "icon")), new_trip_path %>
-<br>
-<%= link_to raw(image_tag("scale2.png", :alt => "luggage_icon", :class=> "icon")), new_expense_path %>
-
-<br>
-<%= image_tag("secure.png", :alt => "luggage_icon", :class=> "icon") %>
-</div>
-<br>
-<br>
-<br>
-<br>
-</div>
+  <h1>Hi new user</h1>
 </section>
-
-
 <%= yield %>
 <section>
-<div class="block">
-<%= link_to 'Start now', new_trip_path, :class=> "btn" %>
-
-</div>
+  <div class="block">
+    <%= link_to 'Start now', new_user_registration_path, :class=> "btn" %>
+  </div>
 </section>
-
-
-
-</header>
-
-
-<script>
- $(function() {
-   $( "#expense_datepicker" ).datepicker();
- });
- </script>
-
-
-<script type="text/javascript">
-      // Taken from http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/
-      jQuery("document").ready(function($){
-        var nav_container = $("#fixed_header");
-        if(nav_container.offset()) {
-          var offset = nav_container.offset().top;
-        }
-
-        console.log(offset);
-
-        $(window).scroll(function () {
-          if( $(this).scrollTop() > offset) {
-            nav_container.addClass("f-nav");
-          } else {
-            nav_container.removeClass("f-nav");
-          }
-        });
-      });
-
-      $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
-      });
-    </script>
-  </body>
-  </html>
+</body>
+</html>

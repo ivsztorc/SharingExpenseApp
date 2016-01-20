@@ -5,4 +5,3 @@ class Currency < ActiveRecord::Base
        currency.name     #=> "United States Dollar"
      end
 end
-

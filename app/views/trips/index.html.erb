@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @trips.each do |trip| %>
+    <% @trips[0,1].each do |trip| %>
       <tr>
         <td><%= trip.name %></td>
         <td><%= trip.country %></td>
@@ -24,7 +24,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= link_to 'New Trip', new_trip_path %>
