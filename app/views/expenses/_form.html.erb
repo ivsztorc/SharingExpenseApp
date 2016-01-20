@@ -24,14 +24,17 @@
     <%= f.text_field :amount %>
   </div>
   <div class= "field">
-  <%= f.label :expense_image%><br />
+  <%= f.label :expense_image%><br/>
   <%= f.file_field :expense_image %>
   </div>
   <div class="field">
-    <%= f.label :created_at %><br>
-    <%= f.text_field :created_at %>
+    <%= f.label :date %><br>
+    <%= f.text_field :datepicker %>
   </div>
-  <p>Date: <input type="text" id="datepicker"></p>
+  <!-- <p>Date: <input type="text" id="datepicker"></p> -->
+  
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
