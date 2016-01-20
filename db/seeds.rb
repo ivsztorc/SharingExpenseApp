@@ -23,26 +23,26 @@ country_list.each do |country|
   Country.create(name: country)
 end
 
-# currency_symbols = [
-#     'USD': '$', // US Dollar
-#     'EUR': '€', // Euro
-#     'CRC': '₡', // Costa Rican Colón
-#     'GBP': '£', // British Pound Sterling
-#     'ILS': '₪', // Israeli New Sheqel
-#     'INR': '₹', // Indian Rupee
-#     'JPY': '¥', // Japanese Yen
-#     'KRW': '₩', // South Korean Won
-#     'NGN': '₦', // Nigerian Naira
-#     'PHP': '₱', // Philippine Peso
-#     'PLN': 'zł', // Polish Zloty
-#     'PYG': '₲', // Paraguayan Guarani
-#     'THB': '฿', // Thai Baht
-#     'UAH': '₴', // Ukrainian Hryvnia
-#     'VND': '₫', // Vietnamese Dong
-# ];
+currency_symbols = [
+    "US Dollar",
+    "Euro",
+    "Costa Rican Colón",
+    "British Pound Sterling",
+    "Israeli New Sheqel",
+    "Indian Rupee",
+    "Japanese Yen",
+    "South Korean Won",
+    "Nigerian Naira",
+    "Philippine Peso",
+    "Polish Zloty",
+    "Paraguayan Guarani",
+    "Thai Baht",
+    "Ukrainian Hryvnia",
+    "Vietnamese Dong"
+]
 
 
 
-# currency_symbols.each do |currency|
-#   Currency.create(name: currency)
-# end
+currency_list.each do |currency|
+  Currency.create(name: currency)
+end

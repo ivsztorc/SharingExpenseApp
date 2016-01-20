@@ -12,8 +12,6 @@ gem 'jquery-turbolinks'
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 gem 'country_select'
-gem 'currencies'
-gem 'currency_select', '~> 0.1.5'
 gem 'countries', '~> 1.2', '>= 1.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -49,7 +47,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
 end
 
 group :development do
