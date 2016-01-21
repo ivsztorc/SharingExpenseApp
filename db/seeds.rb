@@ -9,6 +9,9 @@ User.delete_all
 Trip.delete_all
 Expense.delete_all
 Usertrip.delete_all
+Country.delete_all
+Currency.delete_all
+
 
 
 u1 = User.create!( name: "admin", email:"admin@expenseshare.com", password: "password", role: "admin")
@@ -40,6 +43,6 @@ currency_symbols = [
     "Ukrainian Hryvnia",
     "Vietnamese Dong"
 ]
-currency_list.each do |currency|
+currency_symbols.each do |currency|
   Currency.create(name: currency)
 end

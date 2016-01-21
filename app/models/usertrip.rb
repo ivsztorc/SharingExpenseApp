@@ -1,4 +1,5 @@
 class Usertrip < ActiveRecord::Base
-  has_many :expenses, :through => :usertrip
+  belongs_to :user
+  belongs_to :trip
 
 end

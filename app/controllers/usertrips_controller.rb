@@ -1,6 +1,8 @@
 class UserTripsController < ApplicationController
   before_action :set_usertrip, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!
+  
   def index
     @usertrips = UserTrip.all
   end

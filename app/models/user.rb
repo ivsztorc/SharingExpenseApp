@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   has_many :trips, :through => :usertrip
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
-  has_many :trips
   has_many :expenses
   # has_many :feedbacks, :through => :passenger
 
@@ -27,9 +26,7 @@ def set_default_role
   self.role = "user" unless role
 end 
 
-
-
-def role?(role_to_compare)
+def role (role_to_compare)
   self.role.to_s == role_to_compare.to_s
 end
 

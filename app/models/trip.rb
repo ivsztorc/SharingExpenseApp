@@ -1,5 +1,6 @@
 class Trip < ActiveRecord::Base
-  has_many :users, :through => :trips
-  belongs_to :country_id
-  belongs_to :currency_id
+  has_many :users, :through => :usertrips
+  has_many :expenses
+  belongs_to :country
+  belongs_to :currency
 end

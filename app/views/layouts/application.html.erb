@@ -22,13 +22,15 @@
    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
    <% end %> 
  </header>
+<% if !user_signed_in? %>
 <section>
   <h1>Hi new user</h1>
+  <%= link_to 'Get started', new_user_registration_path, :class=> "btn" %>
 </section>
+<% end %>
 <%= yield %>
 <section>
   <div class="block">
-    <%= link_to 'Start now', new_user_registration_path, :class=> "btn" %>
   </div>
 </section>
 </body>
