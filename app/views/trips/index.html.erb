@@ -12,11 +12,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @trips[0,3].each do |trip| %>
+    <% @trips[0,12].each do |trip| %>
       <tr>
         <td><%= trip.name %></td>
-        <td><%= trip.country_id %></td>
-        <td><%= trip.currency_id %></td>
+        <td><%= trip.country.name %></td>
+        <td><%= trip.currency.name %></td>
         <td><%= link_to 'Show', trip %></td>
         <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
         <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
