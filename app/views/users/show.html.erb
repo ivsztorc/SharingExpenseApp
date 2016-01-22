@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+  <% if user_signed_in? %>
+  <% unless @user == current_user || current_user.requested_friends.include?(@user) || current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+  <% form_for(:friendship, :url => user_friends_path(:user_id => current_user.id, :friend_id => @user.id)) do |f| %>
+  <%= submit_tag "Add to My Friends" %>
+<% end %>
+<% end %>
+<% end %>
+
+
+
 
 <p>
   <strong>Name:</strong>
@@ -19,6 +29,26 @@
   <strong>Updated at:</strong>
   <%= @user.updated_at %>
 </p>
+
+<h2>Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%=h friendship.friend.username %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Find Friends", users_path %></p>
+<!-- 
+<h2>Friended by Users</h2>
+<ul>
+  <%# for user in @user.friend %>
+    <li><%#=h user.username %></li>
+  <%# end %>
+</ul> -->
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
