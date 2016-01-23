@@ -6,14 +6,17 @@
     background: $c-link;
     border: 0;
     color: white;
-    height: 40px;
+    height: 82px;
     margin: 0px auto;
-    padding: 15px 0;
     top: 0;
     vertical-align: baseline;
     width: 100%;   
 }
 
+.logo {
+    display: block;;
+    margin: $spacing-tight;
+}
 .account a {
     border: 1px solid $c-white;
     border-radius: $radius;

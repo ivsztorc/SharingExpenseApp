@@ -4,7 +4,9 @@
 /*
 Any element which does not have properties set will not be output by SASS
 */
-
+*{
+  box-sizing: border-box;
+}
 /*
 GROUP NORMALISATION
 */
@@ -125,7 +127,8 @@ blockquote {
 
 }
 body{
-
+    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    padding: 82px 0 0;
 }
 button{
 
@@ -200,7 +203,8 @@ footer {
 
 }
 form{
-
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 // H
@@ -215,20 +219,21 @@ h6{
   margin-bottom: $spacing;
 }
 h1 {
-  font-size: $font-largest;
+  font-size: $font-size-largest;
   font-weight: 300;
+  text-align: center;
 }
 
 h2 {
-  font-size: $font-larger;
+  font-size: $font-size-larger;
 }
 
 h3 {
-  font-size: $font-large;
+  font-size: $font-size-large;
 }
 
 h4 {
-  font-size: $font-nrml-size;
+  font-size: $font-size;
 }
 
 h5 {
@@ -241,13 +246,13 @@ h6 {
 // Make sure our H's aren't too big on those lil' devices
 @include media-max($medium){
   h1{
-    font-size: $font-larger;
+    font-size: $font-size-larger;
   }
   h2{
-    font-size: $font-large;
+    font-size: $font-size-large;
   }
   h3{
-    font-size: $font-nrml-size;
+    font-size: $font-size;
   }
 }
 header {
@@ -278,9 +283,11 @@ input {
   background: $c-white;
   border: 1px solid $c-gray;
   color: $c-green2;
+  display: block;
   line-height: normal;
   margin-bottom: $spacing-tight;
-  padding: $spacing-tight;
+  padding: $spacing-tighter;
+  width: 100%;
 
   // INPUT STATES
   &:required{
@@ -346,8 +353,8 @@ kbd {
 //--------------------------------
 label {
   display: block;
-  font-size: $font-smaller;
-  margin: spacing 0 spacing-tight;
+  font-size: $font-size-smaller;
+  margin: $spacing-tight 0 $spacing-tightest;
   text-transform: uppercase;
 }
 legend {
@@ -364,8 +371,7 @@ mark {
 
 }
 main {
-  margin: 0 auto;
-  max-width: $max-width;
+  margin: $spacing-tight;
 }
 menu {
 

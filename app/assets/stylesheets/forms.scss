@@ -1,0 +1,12 @@
+@import "variables";
+@import "mixins";
+
+@include media-min($medium) {
+
+  form {
+    .actions {
+      flex-direction: row-reverse;
+    }
+  }
+
+}

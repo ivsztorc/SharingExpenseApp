@@ -3,20 +3,45 @@
 @import "mixins";
 
 // B
+a.btn {
+  color: $c-white;
+}
 .btn { 
+  background: $c-button;
   border-radius: 3px;
   border: 1px solid $c-button;
-  color: $c-button;
+  color: $c-white;
   display: block;
-  font-size: 1.4em;
-  margin: 50px auto;
+  font-size: $font-size;
   padding: $spacing-tighter;
   text-align: center;
-  width: 120px;
 
   &:hover {
-    background: $c-button;
-    color: $c-white
+    background: $c-hover;
+    color: $c-white;
+  }
+
+  &.full-width {
+    max-width: 70%;
+    margin: $spacing-tight auto;
+  }
+  &.secondary {
+    background-color: transparent;
+    color: $c-button;
+    &:hover {
+      background: $c-button;
+      color: $c-white
+    }
+  }
+  &.error {
+    background: transparent;
+    border: none;
+    font-size: $font-size;
+  }
+}
+@include media-min($medium) {
+  .btn {
+    max-width: 240px;
   }
 }
 
@@ -27,4 +52,26 @@
 .collapse {
   margin: 0;
   padding: 0;
+}
+
+// E
+.error {
+  background: lighten($c-error, 30%);
+  border: 1px solid $c-error;
+  color: $c-error;
+}
+// F
+.flex {
+  display: flex;
+  justify-content:  space-between;
+
+  &>*{
+    flex: 1 200px;
+  }
+}
+
+// W
+.wrapper {
+  max-width: $max-width;
+  margin: 0 auto;
 }

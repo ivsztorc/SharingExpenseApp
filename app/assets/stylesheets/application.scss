@@ -22,23 +22,9 @@
 // SPECIFIC
 @import "modifiers";
 @import "header";
+@import "forms";
 @import "z-index";
 
-body {
-    margin: 0;
-    color: black;
-    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
-    padding: 60px 0 0;
-  }
-
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-a {
-  color: #BDEB07;
-  text-decoration: none;
-}
 
 
 /*SIGNUP/LOGIN/EDIT PROFILE*/
