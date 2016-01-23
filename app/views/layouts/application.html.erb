@@ -14,23 +14,20 @@
 </head>
 <body>
   <header class="header">
-  <a href="/">
-    <img src="//placehold.it/180x50">
-  </a>  
-  <div class="account">
-
-  <% if !user_signed_in? %>
-    <%= link_to 'Login', new_user_session_path %>
-  <% else %>
-    <%= link_to "Account", edit_user_registration_path %>
-  <% end %>
-  </div> 
+    <a href="/">
+      <img src="//placehold.it/180x50">
+    </a>  
+    <div class="account">
+      <% if !user_signed_in? %>
+        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
+      <% else %>
+        <%= link_to "Account", edit_user_registration_path %>
+      <% end %>
+    </div> 
  </header>
-<% if !user_signed_in? %>
-<% end %>
 <main class="main">
   <%= yield %>
 </main>
-<h1><%= link_to "Hello, #{current_user.name}", current_user %></h1>
 </body>
 </html>
