@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+/*MAIN HEADER*/
+.header {
+    background: $c-link;
+    border: 0;
+    color: white;
+    height: 40px;
+    margin: 0px auto;
+    padding: 15px 0;
+    top: 0;
+    vertical-align: baseline;
+    width: 100%;   
+}
+
+.account a {
+    border: 1px solid $c-white;
+    border-radius: $radius;
+    color: $c-white;
+    position: absolute;
+    padding: $spacing-tighter;
+    top: $spacing-tight;
+    right: $spacing-tight;
+}
+

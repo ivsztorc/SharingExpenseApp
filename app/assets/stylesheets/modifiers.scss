@@ -1,0 +1,30 @@
+
+@import "variables";
+@import "mixins";
+
+// B
+.btn { 
+  border-radius: 3px;
+  border: 1px solid $c-button;
+  color: $c-button;
+  display: block;
+  font-size: 1.4em;
+  margin: 50px auto;
+  padding: $spacing-tighter;
+  text-align: center;
+  width: 120px;
+
+  &:hover {
+    background: $c-button;
+    color: $c-white
+  }
+}
+
+// C
+.clearfix {
+  @include clearfix();
+}
+.collapse {
+  margin: 0;
+  padding: 0;
+}

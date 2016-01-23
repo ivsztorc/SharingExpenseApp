@@ -1,0 +1,19 @@
+@mixin z-index( $position, $index ){
+  position: $position;
+  z-index: $index;
+}
+
+// 4
+.header{
+  @include z-index(fixed, 4);
+}
+
+// 3
+
+// 2
+
+// 1
+
+// 0
+
+

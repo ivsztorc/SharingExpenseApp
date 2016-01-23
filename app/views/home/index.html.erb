@@ -1,9 +1,11 @@
 <% if user_signed_in? %>
-<div class="home-page">
+  <h1>My Trips</h1>
+  <%= link_to 'Listing Trips', trips_path %>
+  <%= link_to 'Create new trip', new_trip_path, :class=> "btn" %>
+<% else %>
   <h1>Welcome to ExpenseShare</h1>
   <h2>Keep a track of your expenses instantly</h2>
-</div>
 
-<%= link_to 'Listing Trips', trips_path %>
-<%= link_to 'Create new trip', new_trip_path, :class=> "btn" %>
+<%= link_to 'Get started', new_user_registration_path, :class=> "btn" %>
+
 <% end %>

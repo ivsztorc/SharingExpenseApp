@@ -13,25 +13,24 @@
 
 </head>
 <body>
-  <header class="header flex">  
-    <% if user_signed_in? %>
-    <div class="account">
-     <strong><%= link_to "Hello, #{current_user.name}", current_user %></strong>.
-   </div>
-   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'account-edit' %> |
-   <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'account-logout'  %>
-   <% end %> 
+  <header class="header">
+  <a href="/">
+    <img src="//placehold.it/180x50">
+  </a>  
+  <div class="account">
+
+  <% if !user_signed_in? %>
+    <%= link_to 'Login', new_user_session_path %>
+  <% else %>
+    <%= link_to "Account", edit_user_registration_path %>
+  <% end %>
+  </div> 
  </header>
 <% if !user_signed_in? %>
-<section>
-  <h1>Hi new user!! This is totes amaze</h1>
-  <%= link_to 'Get started', new_user_registration_path, :class=> "btn" %>
-</section>
 <% end %>
-<%= yield %>
-<section>
-  <div class="block">
-  </div>
-</section>
+<main class="main">
+  <%= yield %>
+</main>
+<h1><%= link_to "Hello, #{current_user.name}", current_user %></h1>
 </body>
 </html>

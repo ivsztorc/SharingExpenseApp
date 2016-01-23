@@ -1,0 +1,501 @@
+@import "variables";
+@import "mixins";
+
+/*
+Any element which does not have properties set will not be output by SASS
+*/
+
+/*
+GROUP NORMALISATION
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+ canvas,
+ progress,
+ video {
+   display: inline-block; /* 1 */
+   vertical-align: baseline; /* 2 */
+}
+[hidden],
+template {
+  display: none;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+body, input, p {
+  font-size: 1em;
+  font-weight: 300;
+  font-family: 'Open Sans', 'Roboto', 'Helvetica', 'Helvetica Neue', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+}
+
+/*
+INDIVIDUAL SELECTORS
+*/
+
+*:focus {
+  outline: 0; // Remove default browser focus style. You should implement a new focus style for accessibility though!
+}
+
+// A
+//--------------------------------
+a{
+  background-color: transparent;
+  color: $c-link;
+  text-decoration: none;
+
+  &:visited{
+    color: $c-link;
+    //color: $color-visited;
+  }
+  &:hover{
+    color: $c-hover;
+    outline: 0;
+  }
+  &:active{
+    color: $c-active;
+    outline: 0;
+  }
+}
+abbr {
+
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+address {
+
+}
+article {
+
+}
+aside {
+
+}
+audio {
+
+}
+
+// B
+//--------------------------------
+b {
+  font-weight: bold;
+}
+blockquote {
+
+}
+body{
+
+}
+button{
+
+  &::-moz-focus-inner{
+    border: 0;
+    padding: 0;
+  }
+}
+
+// C
+//--------------------------------
+canvas {
+
+}
+caption {
+
+}
+center {
+
+}
+cite {
+
+}
+code {
+
+}
+
+// D
+//--------------------------------
+del{
+
+}
+details {
+
+}
+dfn {
+  font-style: $c-highlight;
+}
+div {
+
+}
+dl {
+
+}
+dt {
+
+}
+dd {
+
+}
+
+// E
+//--------------------------------
+em {
+
+}
+
+// F
+//--------------------------------
+fieldset {
+  border: 1px solid $c-gray-light;
+  margin: 0 $spacing-tightest;
+  padding: $spacing-tight;
+}
+figcaption {
+
+}
+figure {
+
+}
+footer {
+
+}
+form{
+
+}
+
+// H
+//--------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  line-height: $line-height;
+  margin-bottom: $spacing;
+}
+h1 {
+  font-size: $font-largest;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: $font-larger;
+}
+
+h3 {
+  font-size: $font-large;
+}
+
+h4 {
+  font-size: $font-nrml-size;
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+// Make sure our H's aren't too big on those lil' devices
+@include media-max($medium){
+  h1{
+    font-size: $font-larger;
+  }
+  h2{
+    font-size: $font-large;
+  }
+  h3{
+    font-size: $font-nrml-size;
+  }
+}
+header {
+
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+html {
+
+}
+
+// I
+//--------------------------------
+i {
+
+}
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+}
+ins {
+
+}
+input {
+  background: $c-white;
+  border: 1px solid $c-gray;
+  color: $c-green2;
+  line-height: normal;
+  margin-bottom: $spacing-tight;
+  padding: $spacing-tight;
+
+  // INPUT STATES
+  &:required{
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    -o-box-shadow:none;
+    box-shadow:none;
+  }
+  &::-moz-focus-inner{
+    border: 0;
+    padding: 0;
+  }
+  &::-webkit-input-placeholder,
+  &:-moz-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder{
+    color: $c-gray-lighter;
+  }
+
+  // INPUT TYPES
+  &[type="checkbox"],
+  &[type="radio"] {
+    box-sizing: border-box;
+    margin-right: $spacing;
+  }
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  &[type="text"],
+  &[type="password"] {
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+  &[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration{
+      -webkit-appearance: none;
+    }
+  }
+  &[type="submit"] {
+
+    &:active{
+      position:relative;
+      top:1px;
+    }
+  }
+}
+
+// K
+//--------------------------------
+kbd {
+
+}
+
+// L
+//--------------------------------
+label {
+  display: block;
+  font-size: $font-smaller;
+  margin: spacing 0 spacing-tight;
+  text-transform: uppercase;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+li {
+  list-style: bullet;
+}
+
+// M
+//--------------------------------
+mark {
+
+}
+main {
+  margin: 0 auto;
+  max-width: $max-width;
+}
+menu {
+
+}
+
+// N
+//--------------------------------
+nav {
+
+}
+
+// O
+//--------------------------------
+ol {
+
+}
+option{
+
+}
+optgroup {
+  font-weight: bold;
+}
+
+// P
+//--------------------------------
+p {
+
+}
+pre {
+  overflow: auto;
+}
+
+// Q
+//--------------------------------
+q {
+
+}
+
+// S
+//--------------------------------
+samp {
+
+}
+section {
+
+}
+::selection {
+  background: $c-highlight;
+  text-shadow: none;
+}
+select {
+
+}
+small {
+  font-size: .8em;
+}
+span {
+
+}
+strong {
+  font-weight: bold;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+summary {
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+// T
+//--------------------------------
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+tbody {
+
+}
+td {
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+}
+tfoot {
+
+}
+thead {
+
+}
+th {
+  padding: 0;
+}
+time {
+
+}
+tr {
+
+}
+tt {
+
+}
+
+// U
+//--------------------------------
+ul {
+
+}
+
+// V
+//--------------------------------
+var {
+
+}
+video {
+}
