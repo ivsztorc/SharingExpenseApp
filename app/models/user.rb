@@ -32,9 +32,9 @@ class User < ActiveRecord::Base
     role_to_compare_to.to_s == self.role.to_s
   end
 
-  def set_default_role
-    self.role = "user" unless role
-  end 
+  # def set_default_role
+  #   self.role = "user" unless role
+  # end 
 
   # def role (role_to_compare)
   #   self.role.to_s == role_to_compare.to_s
