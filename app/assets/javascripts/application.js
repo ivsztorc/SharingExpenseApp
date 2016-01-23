@@ -15,10 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-  $( "#expense_datepicker" ).datepicker();
-});
-
 // Taken from http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/
 jQuery("document").ready(function($){
   var nav_container = $("#fixed_header");

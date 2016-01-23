@@ -12,32 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br>
+    <%= f.label :amount %>
     <%= f.text_field :amount %>
   </div>
   <div class= "field">
-  <%= f.label :expense_image%><br/>
+  <%= f.label :expense_image%>
   <%= f.file_field :expense_image %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label :date %>
     <%= f.text_field :datepicker %>
   </div>
-  <!-- <p>Date: <input type="text" id="datepicker"></p> -->
-  
 
+    <%= f.submit :class=> 'btn' %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
 
-<%= link_to 'Create new expense', new_expense_path %>
+
+
