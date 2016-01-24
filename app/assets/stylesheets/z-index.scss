@@ -4,15 +4,27 @@
 }
 
 // 4
-.header{
+.overlay {
   @include z-index(fixed, 4);
 }
 
 // 3
+.header{
+  @include z-index(fixed, 3);
+}
 
 // 2
+.trip-meta,
+.trip-name {
+    @include z-index(absolute, 2);
+}
 
 // 1
+.trip-header {
+  .black-fade {
+    @include z-index(absolute, 1);
+  }
+}
 
 // 0
 

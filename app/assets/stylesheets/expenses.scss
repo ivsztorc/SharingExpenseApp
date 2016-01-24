@@ -1,0 +1,43 @@
+@import "variables";
+@import "mixins";
+
+
+.expense-date {
+  color: $c-gray-light;
+}
+
+.expense-description {
+  color: $c-gray-light;
+}
+
+.expense-amount {
+  text-align: center;
+  font-size: $font-size-largest;
+  font-weight: 100;
+  margin: $spacing-loose;
+}
+
+.expense-image {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+
+}
+
+.icon-camera_alt:before {
+  font-size: $font-size-larger;
+  position: relative;
+  top: 3px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+// media queries
+@include media-min($medium){
+  .expense-image {
+    width: 50%;
+  }
+}

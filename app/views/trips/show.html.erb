@@ -1,15 +1,18 @@
 <header class="trip-header">
-<p>
+<div class="black-fade"></div>
+<img id="trip-header" class="trip-image" src="//placehold.it/400x200" alt="" />
+<h1 class="trip-name">
   <%= @trip.name %>
-</p>
+</h1>
 
-<p>
-  <%= @trip.country.try (:name) %>
-</p>
-
-<p>
-  <%= @trip.currency.try (:name) %>
-</p>
+<div class="trip-meta">
+  <span class="country">
+    <span class="icon-flag"></span><%= @trip.country.try (:name) %>
+    </span>
+  <span class="currency">
+    <span class="icon-coin-pound"></span><%= @trip.currency.try (:name) %>
+  </span>
+</div>
 
 </header>
 <p id="notice"><%= notice %></p>

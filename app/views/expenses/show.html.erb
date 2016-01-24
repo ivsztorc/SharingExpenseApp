@@ -1,32 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @expense.name %>
-</p>
+</h1>
 
-<p>
-  <strong>Description:</strong>
+<p><span class="icon-work"></span> TRIP NAME</p>
+
+
+<time datetime="<%= @expense.human_readable_date %>" class="expense-date">
+
+<span class="icon-insert_invitation"></span>
+  <%= @expense.human_readable_date %>
+</time>
+
+<p class="expense-description">
   <%= @expense.description %>
 </p>
 
-<p>
-  <strong>Amount:</strong>
+<h2 class="expense-amount">
   <%= @expense.amount %>
-</p>
+</h2>
 
-<p>
-  <strong>Image:</strong>
-  <%#= image_tag @expense.expense_image.url %>
-  <%= link_to image_tag(@expense.expense_image.thumb.url), @expense.expense_image.medium.url %>
-</p>
+<button id="show-receipt" class="btn small"><span class="icon-camera_alt"></span> Show Receipt</button>
 
-<p>
-  <strong>Date</strong>
-  <%= @expense.datepicker %>
-</p>
+<%= link_to image_tag(@expense.expense_image.large.url), @expense.expense_image.large.url, :id=> "expense-image", :class=> "expense-image" %>
 
-<%= link_to 'Edit', edit_expense_path(@expense) %> 
-<%= link_to 'Delete', @expense, method: :delete, data: { confirm: 'Are you sure?' } %>
+<h3>Split between</h3>
 
-<%= link_to 'All Expenses', expenses_path %>
+<ul class="collapse">
+<li>
+    <label><input type="checkbox" value="PERSON">Person</label>
+  </li>
+</ul>
+
+<%= link_to 'Edit', edit_expense_path(@expense), :class=> "btn" %> 
+<%= link_to 'All Expenses', expenses_path, :class=> "btn secondary" %>
+<%= link_to 'Delete', @expense, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn error" %>

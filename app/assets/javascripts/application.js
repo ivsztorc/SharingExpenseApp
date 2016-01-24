@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+//= require expenses.js
+//= require trips.js
+
 // Taken from http://www.sutanaryan.com/how-to-create-fixed-menu-when-scrolling-page-with-css-and-jquery/
 jQuery("document").ready(function($){
   var nav_container = $("#fixed_header");
@@ -46,18 +49,3 @@ $(function() {
   });
 });
 
-
-var $header_img = $("#trip-header"),
- $h1_query = $("h1").text();
-
-console.log($h1_query);
-$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
-   tags: $("#searchterm").val(),
-   tagmode: "any",
-   format: "json"
- },
- function(data) {
-   $header_img.attr("src", data.items[0].media.m);
-   console.log(data);
-});
-<img id="trip-header" src="//placehold.it/400x200" alt="" />

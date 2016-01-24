@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   # before_create :set_default_role
   
   def human_readable_date
-    journey_date.strftime('%A %B %d %Y')
+    trip_date.strftime('%A %B %d %Y')
   end
 
   def human_readable_time

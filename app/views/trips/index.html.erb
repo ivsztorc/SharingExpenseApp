@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 <h1>All Trips</h1>
 <ul class="list trips collapse">
-  <% @trips[0,3].each do |trip| %>
+  <% @trips.each do |trip| %>
     <li>
       <%= link_to (trip) do %>
         <h3><%= trip.name %></h3>

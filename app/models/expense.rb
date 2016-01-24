@@ -6,7 +6,7 @@ class Expense < ActiveRecord::Base
 
   
   def human_readable_date
-    created_at.strftime('%d %B %Y')
+    datepicker.strftime('%d %B %Y')
   end
 
   def human_readable_time
