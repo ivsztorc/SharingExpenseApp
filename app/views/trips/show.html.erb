@@ -1,20 +1,17 @@
-<p id="notice"><%= notice %></p>
+<header class="trip-header">
 <p>
-  <strong>Name:</strong>
   <%= @trip.name %>
 </p>
 
 <p>
-  <strong>Country:</strong>
   <%= @trip.country.try (:name) %>
 </p>
 
 <p>
-  <strong>Currency:</strong>
   <%= @trip.currency.try (:name) %>
 </p>
-
-
+</header>
+<p id="notice"><%= notice %></p>
 <%= link_to 'Edit', edit_trip_path(@trip) %>
 <%= link_to 'Delete', @trip, method: :delete, data: { confirm: 'Are you sure?' } %>
 
