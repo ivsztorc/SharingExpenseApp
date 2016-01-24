@@ -70,6 +70,48 @@ a.btn {
   }
 }
 
+// L
+.list {
+  list-style: none;
+  margin-bottom: $spacing;
+
+  a {
+    background: $c-gray-lightest;
+    border-bottom: 1px solid $c-white;
+    display: block;
+    padding: $spacing-tight;
+    position: relative;
+
+    &:hover {
+      background: lighten($c-green2, 50%);
+    }
+  }
+
+  h3 {
+    margin: 0 0 $spacing-tighter;
+  }
+
+  small {
+    color: $c-gray;
+  }
+
+  div {
+    display: inline-block;
+    margin-right: $spacing;
+  }
+  .icon-small {
+    margin-right: $spacing-tightest;
+  }
+  .icon-keyboard_arrow_right {
+    font-size: 2em;
+    position: absolute;
+    right: $spacing-tighter;
+    top: 40%;
+  }
+}
+
+
+
 // W
 .wrapper {
   max-width: $max-width;

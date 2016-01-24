@@ -1,28 +1,20 @@
 
 <p id="notice"><%= notice %></p>
-<h1>Listing Trips</h1>
+<h1>All Trips</h1>
+<ul class="list trips collapse">
+  <% @trips[0,3].each do |trip| %>
+    <li>
+      <%= link_to (trip) do %>
+        <h3><%= trip.name %></h3>
+        <small>
+          <div><span class="icon-small icon-flag"></span><%= trip.country.try (:name) %></div>
+          <div><span class="icon-small icon-coin-pound"></span><%= trip.currency.try (:name) %></div>
+          <span class="icon-keyboard_arrow_right"></span>
+        </small>
+      <% end %>
+    
+    </li>
+  <% end %>
+  </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Country</th>
-      <th>Currency</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @trips[0,16].each do |trip| %>
-      <tr>
-        <td><%= trip.name %></td>
-        <td><%= trip.country.try (:name) %></td>
-        <td><%= trip.currency.try (:name) %></td>
-        <td><%= link_to 'Show', trip %></td>
-        <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-        <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Trip', new_trip_path %>
+<%= link_to 'New Trip', new_trip_path, :class => 'btn' %>

@@ -1,39 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Expenses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Amount</th>
-      <th>Image</th>
-      <th>Created at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @expenses.each do |expense| %>
-    <!-- <td><%= link_to image_tag(expense.expense_image.thumb.url), expense.expense_image.medium.url %></td> -->
-    <td><%= image_tag expense.expense_image.url %></td>
-      <tr>
-        <td><%= expense.name %></td>
-        <td><%= expense.description %></td>
-        <td><%= expense.amount %></td>
-        <td><%= expense.expense_image %></td>
-        <td><%= expense.human_readable_date %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      
+<h1>All Expenses</h1>
+<ul class="list expenses collapse">
+    <% @expenses[0,3].each do |expense| %>
+    <li>
+    <!-- <%= link_to image_tag(expense.expense_image.thumb.url), expense.expense_image.medium.url %> -->
+    <%#= image_tag expense.expense_image.url %>
+        <%= link_to (expense) do %>
+          <h3><%= expense.name %></h3>
+          <small>
+            <div><span class="icon-small icon-coin-pound"></span><%= expense.amount %></div>
+            <span class="icon-keyboard_arrow_right"></span>
+          </small>
+        <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New Expense', new_expense_path %>
 
