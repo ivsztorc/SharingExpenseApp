@@ -1,5 +1,6 @@
 class Expense < ActiveRecord::Base
   belongs_to :user
+  belongs_to :trip
   mount_uploader :expense_image, ExpenseImageUploader
 
 
