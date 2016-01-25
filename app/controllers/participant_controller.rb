@@ -1,5 +1,5 @@
-class ParticipantController < ApplicationController
-  before_action :set_participant, only: [:show, :edit, :update, :destroy]
+class ParticipantsController < ApplicationController
+  # before_action :set_participant, only: [:show, :edit, :update, :destroy]
   def index
     @participants = Participant.all
   end
@@ -61,6 +61,6 @@ class ParticipantController < ApplicationController
       end
       
       def participant_params
-        params.require(:participant).permit(:name, :email)
+        params.require(:participant).permit(:name, :email, :trip_id)
       end
 end
