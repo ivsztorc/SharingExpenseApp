@@ -18,7 +18,7 @@
 </p>
 
 <h2 class="expense-amount">
-  <%= @expense.amount %>
+  <%= @expense.amount.try (:amount) %>
 </h2>
 
 <button id="show-receipt" class="btn small"><span class="icon-camera_alt"></span> Show Receipt</button>

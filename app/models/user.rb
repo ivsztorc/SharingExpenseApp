@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
 
-  has_many :trips, :through => :usertrip
+  has_many :trips, :through => :usertrips
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
   has_many :expenses
+  has_many :usertrips
   # has_many :friendships
   # has_many :friends, :through => :friendships
   # has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"

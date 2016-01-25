@@ -21,6 +21,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params) 
+    @trip.users<<current_user
     respond_to do |format|
       if @trip.save
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
@@ -61,6 +62,6 @@ class TripsController < ApplicationController
       end
       
       def trip_params
-        params.require(:trip).permit(:tripname, :country_id, :currency_id, :participant_id)
+        params.require(:trip).permit(:tripname, :country_id, :currency_id, :participant_name)
       end
 end
