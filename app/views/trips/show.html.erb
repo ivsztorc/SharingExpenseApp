@@ -2,7 +2,7 @@
 <div class="black-fade"></div>
 <img id="trip-header" class="trip-image" src="//placehold.it/400x200" alt="" />
 <h1 class="trip-name">
-  <%= @trip.name %>
+  <%= @trip.tripname %>
 </h1>
 
 <div class="trip-meta">
@@ -12,8 +12,7 @@
   <span class="currency">
     <span class="icon-coin-pound"></span><%= @trip.currency.try (:name) %>
   </span>
-  <%= @trip.participant.try (:name) %>
-  <%= @trip.participant.try (:email) %>
+  <%= @trip.participant_id.try (:name) %>
 
 </div>
 

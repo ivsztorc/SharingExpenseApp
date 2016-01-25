@@ -1,6 +1,6 @@
 class Participant < ActiveRecord::Base
 belongs_to :trips
-belongs_to :expenses
+has_many :expenses
 
 
 end

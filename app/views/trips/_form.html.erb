@@ -12,8 +12,8 @@
 <% end %>
 
 <div class="field">
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
+  <%= f.label :tripname %><br>
+  <%= f.text_field :tripname %>
 </div>
 
 <div class="currency">
@@ -29,13 +29,13 @@
 <h1>Add Participants</h1>
 
 <div class="field">
-  <%= f.label :participant %><br>
-  <%= f.text_field :name %>
+  <%= f.label :participant_id %><br>
+  <%= f.text_field :participant_id %>
 </div>
 
 <div class="field">
-  <%= f.label :participant %><br>
-  <%= f.text_field :participant %>
+  <%= f.label :participant_id %><br>
+  <%= f.text_field :participant_id %>
 </div>
 
 <%= link_to 'Add Participant', new_participant_path, :class=> "btn" %>
