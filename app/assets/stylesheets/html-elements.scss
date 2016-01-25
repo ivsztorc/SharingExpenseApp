@@ -206,7 +206,11 @@ form{
   max-width: 80%;
   margin: 0 auto;
 }
-
+@include media-min($medium) {
+  form {
+    max-width: 600px;
+  }
+}
 // H
 //--------------------------------
 h1,

@@ -92,7 +92,8 @@ a.btn {
 // L
 .list {
   list-style: none;
-  margin-bottom: $spacing;
+  margin: 0 auto $spacing;
+  max-width: 600px;
 
   a {
     background: $c-gray-lightest;
