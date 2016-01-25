@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :trips
   resources :expenses
   resources :usertrip
+  resources :participants
   root to: "home#index"
 
 

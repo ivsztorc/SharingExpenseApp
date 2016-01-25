@@ -61,6 +61,6 @@ class TripsController < ApplicationController
       end
       
       def trip_params
-        params.require(:trip).permit(:name, :country_id, :currency_id)
+        params.require(:trip).permit(:name, :country_id, :currency_id, :participant_id, :participant_email, :participant_name)
       end
 end

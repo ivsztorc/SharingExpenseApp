@@ -12,6 +12,9 @@
   <span class="currency">
     <span class="icon-coin-pound"></span><%= @trip.currency.try (:name) %>
   </span>
+  <%= @trip.participant.try (:name) %>
+  <%= @trip.participant.try (:email) %>
+
 </div>
 
 </header>
