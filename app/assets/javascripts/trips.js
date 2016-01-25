@@ -1,5 +1,5 @@
 $(function() {
-
+console.log("hi");
   var $header_img = $("#trip-header"),
    $h1_query = $("h1").text();
 
