@@ -12,8 +12,8 @@
           <div><span class="icon-small icon-flag"></span><%= trip.country.try (:name) %></div>
           <div><span class="icon-small icon-coin-pound"></span><%= trip.currency.try (:name) %>
           </div>
-        <%= trip.participant_name.try (:name) %>  
-        <%= trip.participant_name.try (:email) %> 
+        <%= trip.participant_id.try (:name) %>  
+        <%= trip.participant_id.try (:email) %> 
           <span class="icon-keyboard_arrow_right"></span>
         </small>
       <% end %>

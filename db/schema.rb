@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125135326) do
+ActiveRecord::Schema.define(version: 20160126151510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,12 +56,12 @@ ActiveRecord::Schema.define(version: 20160125135326) do
 
   create_table "trips", force: :cascade do |t|
     t.string   "tripname"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.datetime "datepicker"
     t.integer  "country_id"
     t.integer  "currency_id"
-    t.string   "participant_name"
+    t.string   "participant_id"
   end
 
   create_table "users", force: :cascade do |t|
