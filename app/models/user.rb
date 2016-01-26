@@ -20,9 +20,9 @@ class User < ActiveRecord::Base
 
   # before_create :set_default_role
   
-  def human_readable_date
-    trip_date.strftime('%A %B %d %Y')
-  end
+  # def human_readable_date
+  #   trip_date.strftime('%A %B %d %Y')
+  # end
 
   def human_readable_time
     starting_time.strftime('%A %B %d %Y, %H:%M')
