@@ -7,7 +7,7 @@
 <p><span class="icon-work"></span> TRIP NAME</p>
 
 
-<datetime="<%= @expense.human_readable_date %>" class="expense-date">
+<time datetime="<%= @expense.human_readable_date %>" class="expense-date">
 
 <span class="icon-insert_invitation"></span>
   <%= @expense.human_readable_date %>
@@ -36,4 +36,5 @@
 
 <%= link_to 'Edit', edit_expense_path(@expense), :class=> "btn" %> 
 <%= link_to 'All Expenses', expenses_path, :class=> "btn secondary" %>
+<%= link_to 'All Trips', trips_path, :class=> "btn secondary" %>
 <%= link_to 'Delete', @expense, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn error" %>

@@ -23,9 +23,3 @@ $(function() {
 
 });
 
-
-// <script>
-//  $(function() {
-//    $( "#expenses_datepicker" ).datepicker();
-//  });
-//  </script>
