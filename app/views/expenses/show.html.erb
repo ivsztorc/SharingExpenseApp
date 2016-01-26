@@ -7,19 +7,19 @@
 <p><span class="icon-work"></span> TRIP NAME</p>
 
 
-
-<time datetime="<%= @expense.human_readable_date %>" class="expense-date">
+<datetime="<%= @expense.human_readable_date %>" class="expense-date">
 
 <span class="icon-insert_invitation"></span>
   <%= @expense.human_readable_date %>
 </time>
+
 
 <p class="expense-description">
   <%= @expense.description %>
 </p>
 
 <h2 class="expense-amount">
-  <%= @expense.amount.try (:amount) %>
+  <%= @expense.amount %>
 </h2>
 
 <button id="show-receipt" class="btn small"><span class="icon-camera_alt"></span> Show Receipt</button>

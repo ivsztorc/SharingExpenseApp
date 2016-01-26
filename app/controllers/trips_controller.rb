@@ -21,7 +21,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params) 
-    # @trip.users<<current_user
+    @trip.users<<current_user
     respond_to do |format|
       if @trip.save
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }

@@ -20,4 +20,12 @@ $(function() {
     $expense_image.hide();
     $overlay.hide();
   });
+
 });
+
+
+// <script>
+//  $(function() {
+//    $( "#expenses_datepicker" ).datepicker();
+//  });
+//  </script>
