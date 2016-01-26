@@ -1,23 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>All Expenses</h1>
-<ul class="list expenses collapse">
+<ul class="list expenses collapse trip-expenses">
   <% @expenses.each do |expense| %>
   <li>
-    <!-- <%= link_to image_tag(expense.expense_image.thumb.url), expense.expense_image.medium.url %> -->
-    <%#= image_tag expense.expense_image.url %>
-
-    <%#= link_to (expense) do %>
-    
-    
-
-
-    <h3><%= expense.name %></h3>
-  
-    <small>
-      <div><span class="icon-small icon-coin-pound"></span><%= expense.amount %></div>
-      <span class="icon-keyboard_arrow_right"></span>
-    </small>
+    <%= link_to (expense) do %>
+    <%= expense.name %>
+          <strong>$ <%= expense.amount %></strong>
+          <small>
+          <%= expense.description %>
+          </small>
     <% end %>
   </li>
   <% end %>

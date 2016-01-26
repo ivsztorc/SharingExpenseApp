@@ -3,3 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Cancel', trips_path, :class=> "btn text" %>
+<%= link_to 'Delete', @trip, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn error" %>

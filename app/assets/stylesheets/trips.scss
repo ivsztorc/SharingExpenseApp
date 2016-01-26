@@ -10,6 +10,15 @@
   margin: 0;
   bottom: $spacing-loose;
   left: $spacing-tight;
+
+  .btn { //edit button
+    display: inline;
+    margin: 0 0 0 $spacing-tight;
+    padding: 0;
+    .icon-edit:before {
+      font-size: $font-size-smaller;
+    }
+  }
 }
 .black-fade {
   bottom: 0;
@@ -21,6 +30,15 @@
   left: -16px;
   top: -16px;
   width: calc(100% + 32px);
+  
+  .btn {
+    background: transparent;
+    border: none;
+    &:hover {
+      background: transparent;
+      color: $c-green-yellow;
+    }
+  }
 
   .trip-meta {
     color: $c-gray-lighter;
@@ -38,3 +56,51 @@
   top: 0;
   width: 100%;
 }
+
+.trip-expenses, 
+.trip-participants {
+  margin-bottom: $spacing-loosest;
+
+  li {
+    font-size: $font-size-large;
+  }
+  strong {
+    float: right;
+  }
+  small {
+    display: block;
+    color: $c-gray-light;
+  }
+  .btn {
+    float: right;
+    display: inline-block;
+    margin: 0;
+    font-size: $font-size-smaller;
+    padding: 0 $spacing-tighter;
+  }
+  .icon-person,
+  .icon-receipt {
+    &:before {
+      font-size: $font-size-largest;
+    }
+  }
+}
+
+@include media-min( $small ) {
+  .trip-header {
+    width: 100%;
+  }
+}
+@include media-min( $large ) {
+  .trip-header {
+    height: 250px;
+    margin-left: -$spacing-tight;
+  }
+  .trip-info {
+    flex: 1;
+  }
+  .trip-content {
+    flex: 1;
+  }
+}
+

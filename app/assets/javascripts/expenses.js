@@ -7,9 +7,9 @@ $(function() {
 
   $receipt_button.click( function(){
     $('body').append( $overlay );
-    $overlay.show();
+    $overlay.fadeIn();
     $overlay.append( $expense_image );
-    $expense_image.show();
+    $expense_image.fadeIn("slow");
   });
 
   $expense_image.click( function(e){
@@ -17,8 +17,8 @@ $(function() {
   });
 
   $overlay.click( function(){
-    $expense_image.hide();
-    $overlay.hide();
+    $expense_image.fadeOut();
+    $overlay.fadeOut("slow");
   });
 
 });

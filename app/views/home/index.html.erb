@@ -1,10 +1,8 @@
 <% if user_signed_in? %>
   <h1>My Trips</h1>
 
-  <%#= link_to 'Listing Trips', trips_path %>
-
   <ul class="list trips collapse">
-  <% current_user.trips.each do |trip| %>
+  <% current_user.trips.reverse_each do |trip| %>
     <li>
       
       <%= link_to (trip) do %>
@@ -13,12 +11,6 @@
           <div><span class="icon-small icon-flag"></span><%= trip.country.try (:name) %></div>
           <div><span class="icon-small icon-coin-pound"></span><%= trip.currency.try (:name) %>
           </div>
-        
-
-        <%#= trip.participant_name.try (:name) %>  
-        <%#= trip.participant_name.try (:email) %> 
-          
-
           <span class="icon-keyboard_arrow_right"></span>
         </small>
       <% end %>
@@ -26,7 +18,6 @@
     </li>
   <% end %>
   </ul>
-
 
   <%= link_to 'Create new trip', new_trip_path, :class=> "btn" %>
 <% else %>

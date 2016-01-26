@@ -3,7 +3,7 @@
 <h1>All Trips</h1>
 <ul class="list trips collapse">
   
-  <% @trips.each do |trip| %>
+  <% @trips.reverse_each do |trip| %>
     <li>
       
       <%= link_to (trip) do %>

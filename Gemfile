@@ -13,6 +13,7 @@ gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 gem 'country_select'
 gem 'countries', '~> 1.2', '>= 1.2.2'
+gem 'gravtastic'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

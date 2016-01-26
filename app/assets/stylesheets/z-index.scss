@@ -18,6 +18,11 @@
 .trip-name {
     @include z-index(absolute, 2);
 }
+.trip-header {
+  .btn {
+    @include z-index(absolute, 2)
+  }
+}
 
 // 1
 .trip-header {

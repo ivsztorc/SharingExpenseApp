@@ -78,6 +78,11 @@ a.btn {
   border: 1px solid $c-error;
   color: $c-error;
 }
+
+.empty-state {
+  color: $c-gray-lighter;
+  text-align: center;
+}
 // F
 .flex {
   flex-wrap: wrap;
@@ -89,21 +94,30 @@ a.btn {
   }
 }
 
+// H
+hr.fancy {
+     border: 0;
+        height: 1px;
+        background: #333;
+        background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 // L
 .list {
   list-style: none;
   margin: 0 auto $spacing;
   max-width: 600px;
 
-  a {
-    background: $c-gray-lightest;
-    border-bottom: 1px solid $c-white;
+  a {    
+
+    border-bottom: 1px solid $c-gray-lighter;
     display: block;
     padding: $spacing-tight;
     position: relative;
 
     &:hover {
-      background: lighten($c-green2, 50%);
+    background: lighten($c-link, 58%) ;
+
     }
   }
 
