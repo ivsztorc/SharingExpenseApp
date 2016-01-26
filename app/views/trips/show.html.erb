@@ -34,7 +34,7 @@
 
 
 <%= link_to 'Add Participant', new_participant_path(trip_id: @trip.id), :class=> "btn" %>
-<%= link_to 'New Expense', new_expense_path, :class=> "btn" %>
+<%= link_to 'New Expense', new_expense_path(trip_id: @trip.id), :class=> "btn" %>
 
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit', edit_trip_path(@trip), :class=> "btn" %>
