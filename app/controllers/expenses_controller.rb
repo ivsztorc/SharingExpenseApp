@@ -12,7 +12,7 @@ class ExpensesController < ApplicationController
 
 
   def new
-    @expense = Expense.new
+    @expense = Expense.new(trip_id: params[:trip_id])
   end
 
 
@@ -60,6 +60,6 @@ class ExpensesController < ApplicationController
     end
 
     def expense_params
-      params.require(:expense).permit(:name, :description, :amount, :usertrip_id, :expense_image, :datepicker)
+      params.require(:expense).permit(:name, :description, :amount, :usertrip_id, :expense_image, :trip_id, :datepicker)
     end
 end
