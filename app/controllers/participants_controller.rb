@@ -11,7 +11,7 @@ class ParticipantsController < ApplicationController
 
 
   def new
-    @participant = Participant.new
+    @participant = Participant.new(trip_id: params[:trip_id])
   end
 
 

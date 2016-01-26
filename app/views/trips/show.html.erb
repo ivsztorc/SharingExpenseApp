@@ -13,15 +13,22 @@
     <span class="icon-coin-pound"></span><%= @trip.currency.try (:name) %>
   </span>
   
-  <%#= @trip.participant.try (:name) %>
-  <%#= @trip.participant.try (:email) %>
 
 
 </div>
 
 </header>
 
-<%= link_to 'Add Participant', new_participant_path, :class=> "btn" %>
+<% @trip.participants.each do |participant| %>
+<%= participant.name %>
+<%= participant.email %>
+
+
+
+<% end %>
+
+
+<%= link_to 'Add Participant', new_participant_path(trip_id: @trip.id), :class=> "btn" %>
 <%= link_to 'New Expense', new_expense_path, :class=> "btn" %>
 
 <p id="notice"><%= notice %></p>
