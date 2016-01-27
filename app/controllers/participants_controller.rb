@@ -23,7 +23,8 @@ class ParticipantsController < ApplicationController
     @participant = Participant.new(participant_params) 
     respond_to do |format|
       if @participant.save
-        format.html { redirect_to @participant, notice: 'participant was successfully created.' }
+        # format.html { redirect_to @participant, notice: 'participant was successfully created.' }
+        format.html { redirect_to trip_path(@participant.trip)}
         format.json { render :show, status: :created, location: @participant }
       else
         format.html { render :new }
