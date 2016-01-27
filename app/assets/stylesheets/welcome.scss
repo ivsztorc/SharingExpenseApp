@@ -1,0 +1,53 @@
+@import "variables";
+@import "mixins";
+
+
+.wrapper-inner {
+    height: 100%;
+}
+
+.col_3 h3 {
+    border-bottom: 4px solid #c8cf2d;
+    padding: .3em 0 .3em .3em;
+    border-left: none;
+}
+.col_3 p {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+}
+
+
+.home p {
+    margin-bottom: 50px;
+}
+
+// .padded {
+//     padding: 0 5% 40px;
+// }
+@media (min-width:768px) {
+
+// @media screen and (min-width: 960px) {
+
+  .col {
+          display: table;
+          table-layout: fixed;
+      }
+      .col li {
+          display: table-cell;
+          padding: 0 20px;
+      }
+
+      .col h3,
+      .col_3 p {
+          width: auto;
+          text-align: left;
+          line-height: 30px;
+
+      }
+      .col_3 li {
+          padding: 30px;
+          width: 33.33%;
+      }
+
+}
