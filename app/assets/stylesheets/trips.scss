@@ -20,6 +20,10 @@
     }
   }
 }
+
+.trip-name h1 {
+  font-size: $font-size-small;
+}
 .black-fade {
   bottom: 0;
 }
@@ -74,7 +78,7 @@
   .btn {
     float: right;
     display: inline-block;
-    margin: 0;
+    margin: 3px;
     font-size: $font-size-smaller;
     padding: 0 $spacing-tighter;
   }

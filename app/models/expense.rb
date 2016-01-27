@@ -4,7 +4,7 @@ class Expense < ActiveRecord::Base
   belongs_to :participant
   mount_uploader :expense_image, ExpenseImageUploader
 
-
+  
   
   def human_readable_date
     datepicker.strftime('%d %B %Y')

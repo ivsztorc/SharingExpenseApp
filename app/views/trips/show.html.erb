@@ -29,10 +29,14 @@
 
   <div class="trip-content">
     <section class="trip-participants">
-      <h2>Trip Participants <%= link_to new_participant_path(trip_id: @trip.id), :class=> "btn" do %>
+      <h2>Trip Participants <%= link_to edit_participant_path(@trip), :class=> "btn" do %>
+        <span class="icon-edit"></span>
+        <% end %> 
+        <%= link_to new_participant_path(trip_id: @trip.id), :class=> "btn" do %>
           <span class="icon-add"> Add</span>
         <% end %></h2>
-        
+       
+
       
       <% if @trip.participants.length > 0 %>
       <ul class="collapse">
@@ -56,10 +60,13 @@
     <hr class="fancy"/>
 
     <section class="trip-expenses">
-      <h2>Trip Expenses <%= link_to new_expense_path(trip_id: @trip.id), :class=> "btn" do %>
+      <h2>Trip Expenses  <%= link_to expenses_path(@trip), :class=> "btn" do %>
+        <span class="icon-edit"></span>
+        <% end %><%= link_to new_expense_path(trip_id: @trip.id), :class=> "btn" do %>
           <span class="icon-add"> New</span>
         <% end %></h2>
-        
+       
+
       
       <% if @trip.expenses.length > 0 %>
       <ul class="collapse">
@@ -84,7 +91,11 @@
     <hr class="fancy"/>
     <section class="trip-expenses">
     <h2>Total of Expenses</h2>
+    <div class="total">
+    <%= @total %>
+  </div>
     <small>Amount per person</small>
+    
     </section>
 
   </div>

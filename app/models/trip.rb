@@ -7,4 +7,11 @@ class Trip < ActiveRecord::Base
   belongs_to :currency
  
  
+def total 
+  self.expenses.reduce(0) do |sum, expense|
+    sum+=expense.amount
+
+  end
+end
+
 end
