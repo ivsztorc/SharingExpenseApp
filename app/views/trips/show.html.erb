@@ -1,76 +1,76 @@
-<div class="flex">
-  <div class="trip-info">
-    <header class="trip-header">
-      <div class="black-fade"></div>
-      <img id="trip-header" class="trip-image" src="//placehold.it/400x200" alt="" />
+<div class="trip-wrapper">
+<div class="trip-info">
+  <header class="trip-header">
+    <div class="black-fade"></div>
+    <img id="trip-header" class="trip-image" src="//placehold.it/400x200" alt="" />
 
+    <%= link_to trips_path, :class=> "btn secondary" do %>
+    <span class="icon-navigate_before"></span> All Trips
+    <% end %>
 
-      <%= link_to trips_path, :class=> "btn secondary" do %>
-      <span class="icon-navigate_before"></span> All Trips
+    <h1 class="trip-name">
+      <%= @trip.tripname %><%= link_to edit_trip_path(@trip), :class=> "btn" do %>
+      <span class="icon-edit"></span>
       <% end %>
+    </h1>
 
-      <h1 class="trip-name">
-        <%= @trip.tripname %><%= link_to edit_trip_path(@trip), :class=> "btn" do %>
-        <span class="icon-edit"></span>
-        <% end %>
-      </h1>
+    <div class="trip-meta">
+      <span class="country">
+        <span class="icon-flag"></span><%= @trip.country.try (:name) %>
+      </span>
+      <span class="currency">
+        <span class="icon-coin-pound"></span><%= @trip.currency.try (:name) %>
+      </span>
+    </div>
 
-      <div class="trip-meta">
-        <span class="country">
-          <span class="icon-flag"></span><%= @trip.country.try (:name) %>
-        </span>
-        <span class="currency">
-          <span class="icon-coin-pound"></span><%= @trip.currency.try (:name) %>
-        </span>
-      </div>
+  </header>
+</div>
 
-    </header>
-  </div>
+<p id="notice"><%= notice %></p>
 
-  <div class="trip-content">
-    <section class="trip-participants">
-      <h2>Trip Participants <%= link_to edit_participant_path(@trip), :class=> "btn" do %>
-        <span class="icon-edit"></span>
-        <% end %> 
-        <%= link_to new_participant_path(trip_id: @trip.id), :class=> "btn" do %>
-          <span class="icon-add"> Add</span>
-        <% end %></h2>
-       
+<div class="trip-content">
+  <section class="trip-participants">
+    <h2>Trip Participants
+      <%= link_to new_participant_path(trip_id: @trip.id), :class=> "btn" do %>
+        <span class="icon-add"> Add</span>
+      <% end %></h2>
+     
 
-      
-      <% if @trip.participants.length > 0 %>
-      <ul class="collapse">
-        <% @trip.participants.each do |participant| %>
-        <li>
-          <%= participant.name %>
-          <small>
-          <%= participant.email %>
-          </small>
+    
+    <% if @trip.participants.length > 0 %>
+    <ul class="collapse">
+      <% @trip.participants.each do |participant| %>
+        <%= link_to edit_participant_path(participant) do %>
+          <li>
+            <%= participant.name %>
+            <small>
+            <%= participant.email %>
+            </small>
           </li>
         <% end %>
-      </ul>
-      <% else %>
-        <div class="empty-state">
-          <span class="icon-person"></span>
-          <p>No Participants Added</p> 
-        </div>
       <% end %>
-    </section>
+    </ul>
+    <% else %>
+      <div class="empty-state">
+        <span class="icon-person"></span>
+        <p>No Participants Added</p> 
+      </div>
+    <% end %>
+  </section>
 
-    <hr class="fancy"/>
+  <hr class="fancy"/>
 
-    <section class="trip-expenses">
-      <h2>Trip Expenses  <%= link_to expenses_path(@trip), :class=> "btn" do %>
-        <span class="icon-edit"></span>
-        <% end %><%= link_to new_expense_path(trip_id: @trip.id), :class=> "btn" do %>
-          <span class="icon-add"> New</span>
-        <% end %></h2>
-       
+  <section class="trip-expenses">
+    <h2>Trip Expenses  <%= link_to new_expense_path(trip_id: @trip.id), :class=> "btn" do %>
+        <span class="icon-add"> New</span>
+      <% end %></h2>
+     
 
-      
-      <% if @trip.expenses.length > 0 %>
-      <ul class="collapse">
-        <% @trip.expenses.each do |expense| %>
+    
+    <% if @trip.expenses.length > 0 %>
+    <ul class="collapse">
+      <% @trip.expenses.each do |expense| %>
+        <%= link_to (expense) do %>
         <li>
           <%= expense.name %>
           <strong>$ <%= expense.amount %></strong>
@@ -79,28 +79,28 @@
           </small>
         </li>
         <% end %>
-        </ul>
-      <% else %>
-        <div class="empty-state">
-            <span class="icon-receipt"></span>
-            <p>No Expenses Created</p> 
-        </div>
       <% end %>
-    </section>
+      </ul>
+    <% else %>
+      <div class="empty-state">
+          <span class="icon-receipt"></span>
+          <p>No Expenses Created</p> 
+      </div>
+    <% end %>
+  </section>
 
-    <hr class="fancy"/>
-    <section class="trip-expenses">
-    <h2>Total of Expenses</h2>
-    <div class="total">
-    <%= @total %>
-  </div>
-    <small>Amount per person</small>
-    <%= @trip.split %>
-    </section>
-  </div>
-</div>
-
-<p id="notice"><%= notice %></p>
+  <% if @trip.participants.length > 0 && @trip.expenses.length > 0 %>
+  <hr class="fancy"/>
+  <section class="trip-expenses">
+    <h2>Total <span class="total">$ <%= @total %></span></h2>
+    <div class="per-person">
+      <small>Amount per person</small>
+        $ <%= @trip.split %> 
+      <% total / participants.length rescue 0 %>
+    </div>
+  </section>
+  <% end %>
+</div> 
 
 
 

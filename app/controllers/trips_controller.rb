@@ -25,7 +25,7 @@ class TripsController < ApplicationController
     @trip.users<<current_user
     respond_to do |format|
       if @trip.save
-        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
+        format.html { redirect_to @trip, notice: 'New trip created.' }
         format.json { render :show, status: :created, location: @trip }
       else
         format.html { render :new }
@@ -38,7 +38,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     respond_to do |format|
       if @trip.update(trip_params)
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
+        format.html { redirect_to @trip, notice: 'Your trip has been updated.' }
         format.json { render :show, status: :ok, location: @trip }
       else
         format.html { render :edit }
@@ -50,7 +50,7 @@ class TripsController < ApplicationController
   def destroy
     @trip.destroy
     respond_to do |format|
-      format.html { redirect_to trips_url, notice: 'Trip was successfully destroyed.' }
+      format.html { redirect_to trips_url, notice: 'Your trip has been deleted.' }
       format.json { head :no_content }
     end
   end

@@ -6,14 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/4facaa0fd3/Expenseshare/style.css">
+  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/ff765ec907/Expenseshare/style.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
 </head>
-<body>
+<body <% if user_signed_in? %>class="logged-in"<% end %>>
   <header class="header">
     <a class="logo" href="/">
       <img src="//placehold.it/180x50">

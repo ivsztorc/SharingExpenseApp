@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
-  <h1>My Trips</h1>
+  <h2>My Recent Trips</h2>
 
   <ul class="list trips collapse">
-  <% current_user.trips.reverse_each do |trip| %>
+  <% current_user.trips[3..-1].reverse_each do |trip| %>
     <li>
       
       <%= link_to (trip) do %>
@@ -20,6 +20,8 @@
   </ul>
 
   <%= link_to 'Create new trip', new_trip_path, :class=> "btn" %>
+  <hr class="fancy"/>
+  <%= link_to 'View my Expenses', expenses_path, :class=> "btn secondary" %>
 <% else %>
   
   <h1>Welcome to ExpenseShare</h1>

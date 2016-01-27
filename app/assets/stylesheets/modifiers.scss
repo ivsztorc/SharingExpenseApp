@@ -63,6 +63,7 @@ a.btn {
 }
 
 // C
+
 .clearfix {
   @include clearfix();
 }
@@ -142,6 +143,31 @@ hr.fancy {
     right: $spacing-tighter;
     top: 40%;
   }
+}
+
+@include media-min( $large ) {
+  .logged-in {
+    background: $c-gray-lightest;
+  }  
+}
+
+// M
+
+@include media-min( $large ) {
+  .main {
+    @include box-shadow(0, 3px, 1px, darken($c-gray-lighter, 3%));
+    background: $c-white;
+    border-radius: $radius;
+    margin: $spacing-loosest auto;
+    padding: $spacing $spacing-loosest;
+  }
+}
+
+// N
+#notice {
+  background: $c-gray-lightest;
+  line-height: 3em;
+  padding: 0 $spacing-tight;
 }
 
 // O

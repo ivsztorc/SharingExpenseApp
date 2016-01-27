@@ -112,4 +112,10 @@
   }
 }
 
+@include media-min( $large ) {
+  .logged-in {
+    background: url("/images/background.png") no-repeat whitesmoke;
+    background-size: contain;
+  }
+}
 

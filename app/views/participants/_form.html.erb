@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :trip_id %><br>
+    <%= f.label :trip_id %>
     <%= f.hidden_field :trip_id %>
     <%= @participant.trip.try(:tripname) %>
   </div>
 
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <%#= link_to 'Add Participant', new_participant_path, :class=> "btn" %>

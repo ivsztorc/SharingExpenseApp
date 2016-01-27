@@ -67,6 +67,11 @@
 
   li {
     font-size: $font-size-large;
+    padding: $spacing-tight;
+
+    &:hover {
+      background: darken($c-white, 2%);
+    }
   }
   strong {
     float: right;
@@ -88,23 +93,46 @@
       font-size: $font-size-largest;
     }
   }
+  .total {
+    float: right;
+    text-align: right;
+  }
 }
 
 @include media-min( $small ) {
   .trip-header {
     width: 100%;
   }
+  .per-person {
+    font-size: $font-size-larger;
+  }
 }
 @include media-min( $large ) {
   .trip-header {
-    height: 250px;
-    margin-left: -$spacing-tight;
+
+    img,
+    .black-fade {
+      display: none;
+    }
+    h1 {
+      color: $c-black;
+    }
+    .trip-meta {
+      color: $c-gray-light;
+    }
   }
-  .trip-info {
-    flex: 1;
+  .trip-wrapper {
+    max-width: $max-width;
   }
   .trip-content {
     flex: 1;
+  }
+  .total {
+    font-size: $font-size-largest;
+
+    h3 {
+      font-size: $font-size-large;
+    }
   }
 }
 

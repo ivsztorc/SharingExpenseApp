@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :trip_id %><br>
+    <%= f.label :trip_id %>
     <%= f.hidden_field :trip_id %>
-    <%= @expense.trip.try(:tripname) %>
+    <h3><%= @expense.trip.try(:tripname) %></h3>
   </div>
 
 

@@ -8,14 +8,12 @@ class Trip < ActiveRecord::Base
   
 
   def total 
-    self.expenses.reduce(0.0) do |sum, expense|
+    self.expenses.reduce(0) do |sum, expense|
       sum+=expense.amount
     end
   end
-
-
-
+  
   def split
     total/participants.length 
-  end 
+  end
 end

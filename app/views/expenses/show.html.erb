@@ -4,7 +4,8 @@
   <%= @expense.name %>
 </h1>
 
-<p><span class="icon-work"></span> TRIP NAME</p>
+<p><span class="icon-work"></span> 
+    <%= @expense.trip.try(:tripname) %></p>
 
 
 <time datetime="<%= @expense.human_readable_date %>" class="expense-date">
@@ -35,6 +36,5 @@
 </ul>
 
 <%= link_to 'Edit', edit_expense_path(@expense), :class=> "btn" %> 
-<%= link_to 'All Expenses', expenses_path, :class=> "btn secondary" %>
-<%= link_to 'All Trips', trips_path, :class=> "btn secondary" %>
+<%= link_to 'Back to trip', @expense.try(:trip), :class=> "btn secondary" %>
 <%= link_to 'Delete', @expense, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn error" %>
