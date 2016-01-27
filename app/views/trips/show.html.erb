@@ -2,7 +2,7 @@
 <div class="trip-info">
   <header class="trip-header">
     <div class="black-fade"></div>
-    <img id="trip-header" class="trip-image" src="//placehold.it/400x200" alt="" />
+    <img id="trip-header" class="trip-image" src="//placehold.it/400x200?text=No+image+available" alt="" />
 
     <%= link_to trips_path, :class=> "btn secondary" do %>
     <span class="icon-navigate_before"></span> All Trips
@@ -91,7 +91,7 @@
 
   <% if @trip.participants.length > 0 && @trip.expenses.length > 0 %>
   <hr class="fancy"/>
-  <section class="trip-expenses">
+  <section class="trip-expenses clearfix">
     <h2>Total <span class="total">$ <%= @total %></span></h2>
     <div class="per-person">
       <small>Amount per person</small>

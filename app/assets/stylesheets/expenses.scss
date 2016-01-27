@@ -4,17 +4,23 @@
 
 .expense-date {
   color: $c-gray-light;
+  text-align: right;
 }
 
-.expense-description {
+.expense-description p {
   color: $c-gray-light;
+  margin: $spacing-loose 0;
 }
 
 .expense-amount {
-  text-align: center;
-  font-size: $font-size-largest;
-  font-weight: 100;
-  margin: $spacing-loose;
+  text-align: right;
+
+  h2{
+    font-size: $font-size-largest;
+    font-weight: 100;
+    margin: 0;
+    text-align: right;
+  }
 }
 
 .expense-image {

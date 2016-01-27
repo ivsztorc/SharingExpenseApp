@@ -245,7 +245,7 @@ h4 {
 }
 
 h5 {
-
+  margin: $spacing 0 0;
 }
 
 h6 {
@@ -262,6 +262,9 @@ h6 {
   h3{
     font-size: $font-size;
   }
+}
+form h3 {
+  margin: 0;
 }
 @include media-min( $large ) {
   h1 {

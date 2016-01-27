@@ -17,7 +17,6 @@
     <h3><%= @expense.trip.try(:tripname) %></h3>
   </div>
 
-
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -39,8 +38,7 @@
     <%= f.text_field :datepicker %>
   </div>
 
-
-    <%= f.submit :class=> 'btn' %>
+  <%= f.submit :class=> 'btn' %>
 
 <% end %>
 

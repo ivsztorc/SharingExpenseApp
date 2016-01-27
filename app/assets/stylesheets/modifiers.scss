@@ -167,6 +167,8 @@ hr.fancy {
 #notice {
   background: $c-gray-lightest;
   line-height: 3em;
+  max-width: 600px;
+  margin: $spacing auto;
   padding: 0 $spacing-tight;
 }
 

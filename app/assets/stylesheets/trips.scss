@@ -2,8 +2,10 @@
 @import "variables";
 @import "mixins";
 
-.trips {
-
+.participants-count {
+  position: absolute;
+  right: $spacing-loose;
+  top: 38px;
 }
 .trip-name {
   color: $c-white;
@@ -16,11 +18,10 @@
     margin: 0 0 0 $spacing-tight;
     padding: 0;
     .icon-edit:before {
-      font-size: $font-size-smaller;
+      font-size: $font-size-smallest;
     }
   }
 }
-
 .trip-name h1 {
   font-size: $font-size-small;
 }
@@ -98,17 +99,18 @@
     text-align: right;
   }
 }
-
-@include media-min( $small ) {
-  .trip-header {
-    width: 100%;
-  }
-  .per-person {
-    font-size: $font-size-larger;
-  }
+.per-person {
+  float: right;
+  font-size: $font-size-larger;
+  text-align: right;
 }
+
 @include media-min( $large ) {
   .trip-header {
+
+    .btn {
+      color: $c-link;
+    }
 
     img,
     .black-fade {
@@ -126,13 +128,6 @@
   }
   .trip-content {
     flex: 1;
-  }
-  .total {
-    font-size: $font-size-largest;
-
-    h3 {
-      font-size: $font-size-large;
-    }
   }
 }
 

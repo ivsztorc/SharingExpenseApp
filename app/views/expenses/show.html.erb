@@ -4,30 +4,36 @@
   <%= @expense.name %>
 </h1>
 
-<p><span class="icon-work"></span> 
-    <%= @expense.trip.try(:tripname) %></p>
+<div class="flex">
+  <p><span class="icon-work"></span> 
+    <%= @expense.trip.try(:tripname) %>
+  </p>
+  <time datetime="<%= @expense.human_readable_date %>" class="expense-date">
+    <span class="icon-insert_invitation"><%= @expense.human_readable_date %></span>
+  </time>
+</div>
 
-
-<time datetime="<%= @expense.human_readable_date %>" class="expense-date">
-
-<span class="icon-insert_invitation"></span>
-  <%= @expense.human_readable_date %>
-</time>
-
-
-<p class="expense-description">
-  <%= @expense.description %>
-</p>
-
-<h2 class="expense-amount">
-  <%= @expense.amount %>
-</h2>
-
+<div class="flex">
+  <div class="expense-description">
+    <h5>Description</h5>
+    <p>
+      <%= @expense.description %>
+    </p>
+  </div>
+  <div class="expense-amount">
+    <h5>Amount</h5>
+    <h2>
+      $ <%= @expense.amount %>
+    </h2>
+  </div>
+</div>
 <button id="show-receipt" class="btn small"><span class="icon-camera_alt"></span> Show Receipt</button>
+
+<hr class="fancy" />
 
 <%= link_to image_tag(@expense.expense_image.large.url), @expense.expense_image.large.url, :id=> "expense-image", :class=> "expense-image" %>
 
-<h3>Split between</h3>
+<h3>Split expense between</h3>
 
 <ul class="collapse">
 <li>
