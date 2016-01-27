@@ -49,8 +49,8 @@ class User < ActiveRecord::Base
 
    if object.class==Mailboxer::Notification
      return nil
-   else
-     email
+      else
+        email
    end
-  end
+ end
 end

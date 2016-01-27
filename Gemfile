@@ -14,6 +14,7 @@ gem 'jquery-ui-rails'
 gem 'country_select'
 gem 'countries', '~> 1.2', '>= 1.2.2'
 gem 'gravtastic'
+gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
