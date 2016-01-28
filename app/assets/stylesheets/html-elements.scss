@@ -76,7 +76,7 @@ INDIVIDUAL SELECTORS
 */
 
 *:focus {
-  outline: 0; // Remove default browser focus style. You should implement a new focus style for accessibility though!
+  outline: 0; 
 }
 
 // A
@@ -251,7 +251,7 @@ h5 {
 h6 {
 
 }
-// Make sure our H's aren't too big on those lil' devices
+
 @include media-max($medium){
   h1{
     font-size: $font-size-larger;

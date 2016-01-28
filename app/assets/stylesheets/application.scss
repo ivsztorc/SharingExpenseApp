@@ -105,12 +105,6 @@
 
 /*MEDIA QUERIS*/
 
-@media (min-width:768px) {
-  body {
-    /*background: url("/images/backgroundimg.png") no-repeat;*/
-    background-size: cover; 
-  }
-}
 
 @include media-min( $large ) {
   .logged-in {
