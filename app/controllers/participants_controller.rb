@@ -21,6 +21,7 @@ class ParticipantsController < ApplicationController
 
   def create
     @participant = Participant.new(participant_params) 
+    @trip.participants<<current_user
     respond_to do |format|
       if @participant.save
         # format.html { redirect_to @participant, notice: 'participant was successfully created.' }

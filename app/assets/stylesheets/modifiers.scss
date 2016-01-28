@@ -63,7 +63,53 @@ a.btn {
 }
 
 // C
+.center {
+  display: block;
+  text-align: center;
+  max-width: 100%;
+}
+.checkbox {
+  @include clearfix();
+  cursor: pointer;
+  padding: $spacing-tighter;
 
+  &>* {
+    float: left;
+  }
+  label {
+    display: block;
+    font-size: $font-size;
+    width: auto;
+  }
+  input {
+    display: inline-block;
+    width: auto;
+  }
+  &:hover {
+    background: $c-gray-lightest;
+  }
+}
+.checklist {
+  
+  li {
+    @include clearfix();
+    cursor: pointer;
+    padding: $spacing-tighter;
+
+    &:hover {
+      background: $c-gray-lightest;
+    }
+  }
+
+  label {
+    display: block;
+    font-size: $font-size;
+  }
+  input {
+    display: inline-block;
+    width: auto;
+  }
+}
 .clearfix {
   @include clearfix();
 }
@@ -104,6 +150,9 @@ hr.fancy {
 }
 
 // L
+.left {
+  float: left;
+}
 .list {
   list-style: none;
   margin: 0 auto $spacing;
@@ -154,7 +203,7 @@ hr.fancy {
 // M
 
 @include media-min( $large ) {
-  .main {
+  .logged-in .main {
     @include box-shadow(0, 3px, 1px, darken($c-gray-lighter, 3%));
     background: $c-white;
     border-radius: $radius;
@@ -203,6 +252,10 @@ hr.fancy {
 
 // W
 .wrapper {
+  max-width: $max-width*1.3;
+  margin: 0 auto;
+}
+.logged-in .wrapper {
   max-width: $max-width;
   margin: 0 auto;
 }

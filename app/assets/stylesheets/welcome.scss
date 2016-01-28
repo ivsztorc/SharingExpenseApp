@@ -1,6 +1,9 @@
 @import "variables";
 @import "mixins";
 
+.hero {
+  padding: $spacing-loosest;
+}
 
 .wrapper-inner {
     height: 100%;
@@ -17,17 +20,11 @@
     text-align: left;
 }
 
-
 .home p {
     margin-bottom: 50px;
 }
 
-// .padded {
-//     padding: 0 5% 40px;
-// }
 @media (min-width:768px) {
-
-// @media screen and (min-width: 960px) {
 
   .col {
           display: table;
@@ -46,7 +43,7 @@
 
       }
       .col_3 li {
-          padding: 30px;
+          padding: $spacing-tight;
           width: 33.33%;
       }
 

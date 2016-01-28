@@ -13,7 +13,6 @@
 }
 
 .expense-amount {
-  text-align: right;
 
   h2{
     font-size: $font-size-largest;
@@ -45,5 +44,8 @@
 @include media-min($medium){
   .expense-image {
     width: 50%;
+  }
+  .expense-amount {
+    text-align: right;
   }
 }

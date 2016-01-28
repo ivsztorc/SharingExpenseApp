@@ -24,35 +24,34 @@
   <%= link_to 'View my Expenses', expenses_path, :class=> "btn secondary" %>
 <% else %>
   
-  <h1>Welcome to ExpenseShare</h1>
-  <h2>Keep a track of your expenses instantly</h2>
+  <section class="hero">
+    <h1>Welcome to ExpenseShare</h1>
+    <h2>Keep a track of your expenses instantly</h2>  
 
+    <%= link_to 'Get started', new_user_registration_path, :class=> "btn" %>
+  </section>
+  
 
-<body class="home">
-<!-- <div class="wrapper"> -->
-<div class="padded">
-<div class="wrapper-inner">
-<ul class="col_3 col">
-            <li>
-                <h3>Share Expenses</h3>
-                <p>Easy splitting of group expenses. The simplest way to calculate who owes what. Expenseez takes the trouble out of sharing expenses – with friends, with roommates, with anyone.</p>
-            </li>
-            <li>
-                <h3>Manage Debts</h3>
-                <p>Smartly manage debts between friends. Expenseez keeps a running total over time, so you can pay each other back in one big payment, instead of a bunch of small ones.</p>
-            </li>
-            <li>
-                <h3>Mobile Solution</h3>
-                <p>No need to save the receipt! With mobile apps iPhone and Android, you can add expenses as soon as they happen. Get a picture of your receipt and have it saved in your trip.</p>
-            </li>
-        </ul>
-        </div>
-        <!-- </div> -->
-</div>
-</body>
-
-
-
-<%= link_to 'Get started', new_user_registration_path, :class=> "btn" %>
+  <div class="padded">
+    <div class="wrapper-inner">
+      <ul class="col_3 col collapse">
+        <li>
+          <h3>Share Expenses</h3>
+          <%= image_tag("skii.jpg", :alt=>"Skiers") %>
+          <p>Easy splitting of group expenses. The simplest way to calculate who owes what. Expenseez takes the trouble out of sharing expenses – with friends, with roommates, with anyone.</p>
+        </li>
+        <li>
+          <h3>Manage Debts</h3>
+          <%= image_tag("money.jpg", :alt => "Expense") %>
+          <p>Smartly manage debts between friends. Expenseez keeps a running total over time, so you can pay each other back in one big payment, instead of a bunch of small ones.</p>
+        </li>
+        <li>
+          <h3>Mobile Solution</h3>
+          <%= image_tag("mobile.jpg", :alt => "Mobile") %>
+          <p>No need to save the receipt! With mobile apps iPhone and Android, you can add expenses as soon as they happen. Get a picture of your receipt and have it saved in your trip.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 
 <% end %>

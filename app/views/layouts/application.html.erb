@@ -15,9 +15,7 @@
 </head>
 <body <% if user_signed_in? %>class="logged-in"<% end %>>
   <header class="header">
-    <a class="logo" href="/">
-      <img src="//placehold.it/180x50">
-    </a>  
+    <%= link_to raw(image_tag("expenseezlogo.svg", :alt => "Expenseezlogo", :class=> "logo" )), '/' %>
     <div class="account">
       <% if !user_signed_in? %>
       <%= link_to 'Login', new_user_session_path %>
